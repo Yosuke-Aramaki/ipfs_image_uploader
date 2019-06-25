@@ -19,15 +19,11 @@ contract SimpleStorage {
     emit createIpfsHash(ipfsHash);
   }
 
-  function arraylength() public view returns (uint) {
-    uint counter = 0;
-    for (uint i = 0; i < IpfsHash.length; i++) {
-      counter++;
-    }
-    return counter;
-  }
-
   function get() public view returns (string memory) {
     return ipfsHash;
+  }
+
+  function arraylength() public view returns (uint) {
+    return IpfsHash.length;
   }
 }

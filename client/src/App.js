@@ -46,9 +46,6 @@ class App extends Component {
   loadIpfsHash = async () => {
     const length = await this.state.contract.methods.arraylength().call()
     console.log(length)
-    const hoge = await this.state.contract.methods.IpfsHash(1).call()
-    console.log(hoge)
-    this.setState({ hoge })
     for (var i = 0; i <= length; i++) {
       const ipfsHashs = await this.state.contract.methods.IpfsHash(i).call()
       this.setState({
